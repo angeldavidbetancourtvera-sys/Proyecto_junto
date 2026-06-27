@@ -1,5 +1,4 @@
 from django.db import models
-# Create your models here.
 from django.urls import reverse
 
 class Post(models.Model):
@@ -8,4 +7,7 @@ class Post(models.Model):
     date= models.DateField()
     author= models.ForeignKey('auth.User', on_delete=models.CASCADE)
     created_at= models.DateTimeField(auto_now_add=True)
+    
+    def __str__(self):
+        return self.title
     
