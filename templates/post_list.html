@@ -1,0 +1,14 @@
+{% extend "base.html" %}
+
+{% for post in blog_list %}
+        <ul>
+            <li>
+                <a href="{% url 'post_detail' post.pk %}">{{ post.title }}</a>
+                <p><strong>autor:</strong> {{ post.author.username }}</p>
+                <p><strong>created at:</strong> {{ post.created_at }}</p>
+            </li>
+        </ul>
+
+{% endfor %}
+
+{% endblock %}
